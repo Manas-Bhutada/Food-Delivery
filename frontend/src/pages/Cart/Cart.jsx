@@ -7,7 +7,7 @@ const Cart = () => {
 
   //idhar m cart m items access karne k liye state mange kar rha hu
   //idhar m jo maine functions banaye h as a logic in storecontext usko destructure kar rha hu
-  const { cartItems, food_list, removeFromCart,getTotalCartAmount } = useContext(StoreContext);
+  const { cartItems, food_list, removeFromCart,getTotalCartAmount,url } = useContext(StoreContext);
   const navigate=useNavigate();
   return (
     <div className='cart'>
@@ -29,7 +29,7 @@ const Cart = () => {
             return (
               <div>
                 <div className='cart-items-title cart-items-item'>
-                  <img src={item.image} alt="" />
+                  <img src={url+"/images/"+item.image} alt="" />
                   {/* idhar pura logic h cart ka ki kitni quantity and kitna total cost */}
                   <p>{item.name}</p>
                   <p>${item.price}</p>
